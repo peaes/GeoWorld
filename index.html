@@ -204,56 +204,6 @@
 
 
 <section class="section">
-    <div class="container is-max-desktop">
-        <!-- Abstract. -->
-        <div class="columns is-centered has-text-centered">
-        <div class="column is-full-width">
-            <h2 class="title is-3">Abstract</h2>
-            <div class="content has-text-justified">
-            <p>
-Previous works that leverage video models for image-to-3D scene generation often suffer from geometric distortions and blurry content. 
-Using video generation models to implicitly maintain geometric consistency according to a single-frame input is ineffective. 
-In this paper, we present a two-stage method, named GeoWorld, that renovates the image-to-3D scene generation pipeline by providing full-frame geometry features. 
-
-The first-stage video generation model, followed by a multi-view geometry model, produces full-frame geometry features,
-which are then used as a mental draft of geometric conditions to aid the second-stage video-generation model.
-
-A geometric loss is proposed to impose real-world geometric constraints, and a geometry adaptation module is introduced to ensure the effective utilization of geometry features.
-
-Thanks to full-frame geometric modeling, the two smaller video models in our two-stage method can generate higher-fidelity 3D scenes than SOTA methods, while being even faster, e.g. 7.5x faster than Hunyuan-Voyager.
-
-            </p>
-            <img src="./static/method/overview.png"
-                 alt="overview image."/>
-            </div>
-        </div>
-        </div>
-        <!--/ Abstract. -->
-</section>
-
-
-<section class="section">
-    <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-        <div class="column is-full-width">
-            <h2 class="title is-3">Methods</h2>
-            <div class="content has-text-justified">
-            <p>
-                GeoWorld employs a pipeline that differs from previous methods. 
-                It utilizes a geometry condition generation procedure to obtain condition views, 
-                which are then used to extract rich geometric information. 
-                Combined with the geometric loss and the geometry adaptation module, 
-                GeoWorld uses full-frame geometry features to facilitate generation, enabling results with clear geometry and sharp visual content.
-            </p>
-            <img src="./static/method/arch.png"
-                 alt="pipeline image."/>
-            </div>
-        </div>
-        </div>
-    </div>
-</section>
-
-<section class="section">
   <div class="container is-max-desktop" style="max-width: 1200px; margin:auto; position:relative;">
 
     <!-- 标题 -->
@@ -324,6 +274,57 @@ thumbnails.forEach(thumb => {
   border-radius: 5px;
 }
 </style>
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+            <p>
+Previous works that leverage video models for image-to-3D scene generation often suffer from geometric distortions and blurry content. 
+Using video generation models to implicitly maintain geometric consistency according to a single-frame input is ineffective. 
+In this paper, we present a two-stage method, named GeoWorld, that renovates the image-to-3D scene generation pipeline by providing full-frame geometry features. 
+
+The first-stage video generation model, followed by a multi-view geometry model, produces full-frame geometry features,
+which are then used as a mental draft of geometric conditions to aid the second-stage video-generation model.
+
+A geometric loss is proposed to impose real-world geometric constraints, and a geometry adaptation module is introduced to ensure the effective utilization of geometry features.
+
+Thanks to full-frame geometric modeling, the two smaller video models in our two-stage method can generate higher-fidelity 3D scenes than SOTA methods, while being even faster, e.g. 7.5x faster than Hunyuan-Voyager.
+
+            </p>
+            <img src="./static/method/overview.png"
+                 alt="overview image."/>
+            </div>
+        </div>
+        </div>
+        <!--/ Abstract. -->
+</section>
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+            <h2 class="title is-3">Methods</h2>
+            <div class="content has-text-justified">
+            <p>
+                GeoWorld employs a pipeline that differs from previous methods. 
+                It utilizes a geometry condition generation procedure to obtain condition views, 
+                which are then used to extract rich geometric information. 
+                Combined with the geometric loss and the geometry adaptation module, 
+                GeoWorld uses full-frame geometry features to facilitate generation, enabling results with clear geometry and sharp visual content.
+            </p>
+            <img src="./static/method/arch.png"
+                 alt="pipeline image."/>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+
 
 <section class="section">
     <div class="container is-max-desktop">
