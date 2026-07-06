@@ -27,10 +27,7 @@
 > GeoWorld uses a two-stage video-generation pipeline with full-frame geometry features to produce high-fidelity image-to-3D scenes faster than prior methods (7.5× faster than Hunyuan-Voyager). 
 
 <p align="center">
-  <video controls autoplay muted loop playsinline width="900">
-    <source src="assets/concat.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <video src="assets/concat.mp4" controls autoplay muted loop playsinline width="900" />
 </p>
 
 ## 📬 News
