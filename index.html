@@ -6,7 +6,7 @@
         content="Unlocking the Potential of Geometry Models to Facilitate High-Fidelity 3D Scene Generation.">
   <meta name="keywords" content="GeoWorld, Video diffusion, 3DGS">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GeoWorld: Unlocking the Potential of Geometry Models to Facilitate High-Fidelity 3D Scene Generation</title>
+  <title>GeoWorld: Providing Full-frame Geometry Features to Facilitate 3D Scene Generation</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -42,10 +42,7 @@
 </head>
 
 
-
-
 <body>
-
 
 
 <section class="hero">
@@ -53,7 +50,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">GeoWorld: Unlocking the Potential of Geometry Models to Facilitate High-Fidelity 3D Scene Generation</h1>
+          <h1 class="title is-1 publication-title">GeoWorld: Providing Full-frame Geometry Features to Facilitate 3D Scene Generation</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://scholar.google.com/citations?&user=kKyVqq0AAAAJ">Yuhao Wan</a><sup>1,2</sup>,</span>
@@ -75,22 +72,21 @@
               <a href="https://scholar.google.com/citations?&user=TiTxZloAAAAJ">Shaohui Jiao</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=fF8OFV8AAAAJ">Qibin Hou</a><sup>1,†</sup>,
+              <a href="https://scholar.google.com/citations?user=fF8OFV8AAAAJ">Qibin Hou</a><sup>1,4</sup>,
             </span>
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=huWpVyEAAAAJ">Ming-Ming Cheng</a><sup>1</sup>
+              <a href="https://scholar.google.com/citations?user=huWpVyEAAAAJ">Ming-Ming Cheng</a><sup>4,1✉</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Nankai University</span>
+            <span class="author-block"><sup>1</sup>VCIP & AAIS, Nankai University</span>
             <span class="author-block"><sup>2</sup>ByteDance Inc.</span>
             <span class="author-block"><sup>3</sup>Renmin University of China</span>
+            <span class="author-block"><sup>4</sup>NKIARI, Shenzhen Futian</span>
           </div>
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>†</sup>Corresponding author</span>
-          </div>
+
 
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -137,7 +133,7 @@
 <div style="
     border:1px solid #888;
     padding:15px 20px;
-    margin:0 auto 20px;       /* 上下间距 + 居中 */
+    margin:-35px auto 20px;       /* 上下间距 + 居中 */
     border-radius:5px;
     background-color:#f9f9f9;
     font-weight:bold;
@@ -145,8 +141,7 @@
     text-align:left;          /* 根据需要 */
     box-sizing:border-box;
 ">
-  TL;DR: GeoWorld can obtain <span style="text-decoration: underline;">full-frame</span> high-quality geometric features, 
-  effectively unlocking the potential of the geometry model and enhancing both geometric consistency and visual clarity.
+  TL;DR: GeoWorld uses a two-stage video-generation pipeline with <span style="text-decoration: underline;">full-frame</span> geometry features to produce high-fidelity image-to-3D scenes faster than prior methods (7.5x faster than Hunyuan-Voyager).
 </div>
 
 
@@ -169,22 +164,93 @@
 </section>
 
 
+
 <section class="section">
     <div class="container is-max-desktop">
-      <h2 style="text-align:center; font-size:32px; margin-bottom:10px;">Video Results under Different Trajectories</h2>
         <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
+            <h2 class="title is-3">Why GeoWorld Works?</h2>
             <div class="content has-text-justified">
-      <video autoplay muted loop playsinline style="max-width: 100%; border-radius: 10px;">
-        <source src="./static/teaser/concat2.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+            <div style="
+    border:1px solid #888;
+    padding:15px 20px;
+    margin:0 auto 20px;
+    border-radius:5px;
+    background-color:#f9f9f9;
+    font-weight:bold;
+    max-width:800px;
+    text-align:left;
+    box-sizing:border-box;
+">
+  For GeoWorld, the first stage provides a <span style="text-decoration: underline;">mind draft</span> for the second stage. During second-stage generation, the model starts from a video with complete content and refines it with the help of <span style="text-decoration: underline;">full-frame</span> geometry features. For the model, this is <span style="text-decoration: underline;">much easier than</span> directly imagining the entire scene from a single-frame input.
+</div>
+            <p>
+                (a) Pipelines of previous methods. Although details vary, their video models are conditioned only on single-frame information and limited geometric information. 
+                "Optional" indicates that this step is not included in some methods. 
+                We can see that partial views or partial depths provide very limited information.
+            </p>
+            <p>
+                (b) Our GeoWorld leverages the geometrical condition generation procedure and a geometry model to obtain full-frame geometry features and condition views for generation, 
+                rather than relying solely on geometry extracted from the input image.
+            </p>
+            <img src="./static/method/compare.png"
+                 alt="comparison image."/>
             </div>
         </div>
         </div>
     </div>
 </section>
 
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+            <p>
+Previous works that leverage video models for image-to-3D scene generation often suffer from geometric distortions and blurry content. 
+Using video generation models to implicitly maintain geometric consistency according to a single-frame input is ineffective. 
+In this paper, we present a two-stage method, named GeoWorld, that renovates the image-to-3D scene generation pipeline by providing full-frame geometry features. 
+
+The first-stage video generation model, followed by a multi-view geometry model, produces full-frame geometry features,
+which are then used as a mental draft of geometric conditions to aid the second-stage video-generation model.
+
+A geometric loss is proposed to impose real-world geometric constraints, and a geometry adaptation module is introduced to ensure the effective utilization of geometry features.
+
+Thanks to full-frame geometric modeling, the two smaller video models in our two-stage method can generate higher-fidelity 3D scenes than SOTA methods, while being even faster, e.g. 7.5x faster than Hunyuan-Voyager.
+
+            </p>
+            <img src="./static/method/overview.png"
+                 alt="overview image."/>
+            </div>
+        </div>
+        </div>
+        <!--/ Abstract. -->
+</section>
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+            <h2 class="title is-3">Methods</h2>
+            <div class="content has-text-justified">
+            <p>
+                GeoWorld employs a pipeline that differs from previous methods. 
+                It utilizes a geometry condition generation procedure to obtain condition views, 
+                which are then used to extract rich geometric information. 
+                Combined with the geometric loss and the geometry adaptation module, 
+                GeoWorld uses full-frame geometry features to facilitate generation, enabling results with clear geometry and sharp visual content.
+            </p>
+            <img src="./static/method/arch.png"
+                 alt="pipeline image."/>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
 
 <section class="section">
   <div class="container is-max-desktop" style="max-width: 1200px; margin:auto; position:relative;">
@@ -196,9 +262,9 @@
 
     <!-- 方法名字（METHODS） -->
     <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
-      <span style="width:720px; text-align:center; font-weight:bold; font-size:14px;">DimensionX</span>
       <span style="width:720px; text-align:center; font-weight:bold; font-size:14px;">See3D</span>
       <span style="width:720px; text-align:center; font-weight:bold; font-size:14px;">FlexWorld</span>
+      <span style="width:720px; text-align:center; font-weight:bold; font-size:14px;">Hunyuan-Voyager</span>
       <span style="width:720px; text-align:center; font-weight:bold; font-size:14px;">GeoWorld (ours)</span>
     </div>
 
@@ -258,62 +324,22 @@ thumbnails.forEach(thumb => {
 }
 </style>
 
-
-
-
-
-
-
 <section class="section">
     <div class="container is-max-desktop">
-        <!-- Abstract. -->
+      <h2 style="text-align:center; font-size:32px; margin-bottom:10px;">Video Results under Different Trajectories</h2>
         <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
-            <h2 class="title is-3">Abstract</h2>
             <div class="content has-text-justified">
-            <p>
-            Previous works leveraging video models for image-to-3D scene generation tend to suffer from geometric distortions and blurry content. 
-            
-            In this paper, we renovate the pipeline of image-to-3D scene generation by unlocking the potential of geometry models and present our GeoWorld.
-            
-            Instead of exploiting geometric information obtained from a single-frame input,
-            we propose to first generate consecutive video frames and then take advantage of the geometry model to provide full-frame geometry features, which contain richer information than single-frame depth maps or camera embeddings used in previous methods, and use these geometry features as geometrical conditions to aid the video generation model.
-            
-            To enhance the consistency of geometric structures, we further propose a geometry alignment loss to provide the model with real-world geometric constraints and a geometry adaptation module to ensure the effective utilization of geometry features.
-            
-            Extensive experiments show that our GeoWorld can generate high-fidelity 3D scenes from a single image and a given camera trajectory, outperforming prior methods both qualitatively and quantitatively.
-            </p>
-            <img src="./static/method/overview.png"
-                 alt="overview image."/>
-            </div>
-        </div>
-        </div>
-        <!--/ Abstract. -->
-</section>
-
-
-
-<section class="section">
-    <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-        <div class="column is-full-width">
-            <h2 class="title is-3">Methods</h2>
-            <div class="content has-text-justified">
-            <p>
-                GeoWorld employs a pipeline that differs from previous methods. 
-                It utilizes a geometry condition generation procedure to obtain condition views, 
-                which are then used to extract rich geometric information. 
-                Combined with the geometric loss and the geometry adaptation module, 
-                GeoWorld unlocks the potential of the geometry model, 
-                enabling the generation of results with clear geometry and sharp visual content.
-            </p>
-            <img src="./static/method/arch.png"
-                 alt="pipeline image."/>
+      <video autoplay muted loop playsinline style="max-width: 100%; border-radius: 10px;">
+        <source src="./static/teaser/concat2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
             </div>
         </div>
         </div>
     </div>
 </section>
+
 
 <section class="section">
   <div class="container is-max-desktop">
