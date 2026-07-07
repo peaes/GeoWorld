@@ -12,6 +12,12 @@
   <a href="https://arxiv.org/abs/2511.23191" target="_blank">
     <img src="https://img.shields.io/badge/arXiv-2511.23191-b31b1b.svg" alt="arXiv" />
   </a>
+  <a href="https://huggingface.co/peaes/GeoWorld" target="_blank">
+    <img src="https://img.shields.io/badge/🤗-Model%20Weights-yellow" alt="Hugging Face Model Weights" />
+  </a>
+  <a href="https://huggingface.co/papers/2511.23191" target="_blank">
+    <img src="https://img.shields.io/badge/🤗-HF%20Paper-cyan" alt="Hugging Face Paper" />
+  </a>
 </p>
 
 <h4 align="center">GeoWorld: Unlocking the Potential of Geometry Models to Facilitate High-Fidelity 3D Scene Generation</h4>
@@ -61,7 +67,7 @@ pip install -r requirements.txt
 
 1. Download the [VGGT weights](https://github.com/facebookresearch/vggt).
 2. Download the [Wan2.1-Fun weights](https://huggingface.co/alibaba-pai/Wan2.1-Fun-1.3B-Control).
-3. Download our [GeoWorld weights]() and place them under the `models/` directory.
+3. Download our [GeoWorld weights](https://huggingface.co/peaes/GeoWorld) and place them under the `models/` directory.
 4. Run the two inference scripts:
 
 ```bash
