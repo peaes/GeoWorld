@@ -20,7 +20,7 @@
   </a>
 </p>
 
-<h4 align="center">GeoWorld: Unlocking the Potential of Geometry Models to Facilitate High-Fidelity 3D Scene Generation</h4>
+<h4 align="center">GeoWorld: Providing Full-frame Geometry Features to Facilitate 3D Scene Generation</h4>
 
 <h3 align="center">🔥 ECCV 2026</h3>
 
